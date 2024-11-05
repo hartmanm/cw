@@ -18,7 +18,11 @@ where cmds is a file and each line is of the form:
 reference_name        api_cmd_token        2>/dev/null;         any unescaped bash/sh code
 ```
 
-Because in the example cmds file <ip> is the name of the command on he third line
+In the example cmds file: 
+```bash 
+ip
+``` 
+is the name of the command on the third line. So
 ```bash
 bash invoke.sh apis/cmds ip
 ```

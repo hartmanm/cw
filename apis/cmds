@@ -1,3 +1,7 @@
+Copyright (c) 2019 Michael Neill Hartman. All rights reserved.
+mnh_license@proton.me
+https://github.com/hartmanm
+
 GET_IP_ADDRESS_VIA_IF   ipif    2>/dev/null; ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -1 | awk '{print $1}'
 GET_MAC_ADDRESS_VIA_IF  macif   2>/dev/null; ifconfig -a | grep -Po 'ether \K.*$' | head -1 | awk '{print $1}'
 GET_IP_ADDRESS          ip      2>/dev/null; ip address show | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -1 | awk '{print $1}'

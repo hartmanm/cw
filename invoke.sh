@@ -5,7 +5,7 @@
 
 [[ ${2} =~ [0-9] ]] && EXEC_LINE=$(cat ${1} | head -$2 | tail -1)
 [[ ${2} =~ [0-9] ]] || EXEC_LINE=$(grep -w ${2} ${1}| head -1)
-EXEC=$(echo ${EXEC_LINE} | cut -f1 -d" " --complement)
+EXEC=$(echo ${EXEC_LINE} | cut -d ' ' -f 2-)
 LAST=$(echo ${EXEC_LINE} | awk '{print $1}')
 [[ -e history ]] || touch history
 [[ -e last_cmd ]] && cat last_cmd >> history

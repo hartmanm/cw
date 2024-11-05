@@ -2,10 +2,11 @@ Copyright (c) 2019 Michael Neill Hartman. All rights reserved.
 mnh_license@proton.me
 https://github.com/hartmanm
 
-GET_IP_ADDRESS_VIA_IF   ipif    2>/dev/null; ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -1 | awk '{print $1}'
-GET_MAC_ADDRESS_VIA_IF  macif   2>/dev/null; ifconfig -a | grep -Po 'ether \K.*$' | head -1 | awk '{print $1}'
-GET_IP_ADDRESS          ip      2>/dev/null; ip address show | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -1 | awk '{print $1}'
-GET_MAC_ADDRESS         mac     2>/dev/null; ip link show | grep -Po 'ether \K.*$' | head -1 | awk '{print $1}'
-LS_PLAHR                ls      2>/dev/null; ls -plahiR
-DIRECTORY_SHA512SUM     dsum    2>/dev/null; [[ ${#@} -gt 0 && -d ${1} ]] && cd ${1}; sha512sum `du -a | awk '{print $2}'` 2>/dev/null  > /tmp/1; DH=`sha512sum /tmp/1 | awk  '{print $1}'`; echo ${DH}
-compile_and_exec_hw     hw      2>/dev/null; [[ ! -d build ]] && mkdir build; echo '#include <stdio.h>' > build/hw.c; echo 'int main() { printf("Hello, World!\\n"); return 0; }' >>  build/hw.c ; gcc -o build/hw build/hw.c ; ./build/hw
+ipif    ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -1 | awk '{print $1}'
+macif   ifconfig -a | grep -Po 'ether \K.*$' | head -1 | awk '{print $1}'
+ip      ip address show | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -1 | awk '{print $1}'
+mac     ip link show | grep -Po 'ether \K.*$' | head -1 | awk '{print $1}'
+ls      ls -plahiR
+dsum    [[ ${#@} -gt 0 && -d ${1} ]] && cd ${1}; sha512sum `du -a ${1}|awk '{print $2}'` 2>/dev/null  > /tmp/1; DH=`sha512sum /tmp/1 | awk  '{print $1}'`; echo ${DH}
+hw      [[ ! -d build ]] && mkdir build; echo '#include <stdio.h>' > build/hw.c; echo 'int main() { printf("Hello, World!\n"); return 0; }' >>  build/hw.c ; gcc -o build/hw build/hw.c ; ./build/hw
+sums    [[ ${#@} -gt 0 && -d ${1} ]] && cd ${1}; sha512sum `du -a ${1}|awk '{print $2}'` 2>/dev/null

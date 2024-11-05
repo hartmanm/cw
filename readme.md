@@ -15,7 +15,7 @@ bash invoke.sh apis/cmds <command>
 where cmds is a file and each line is of the form:
 
 ```bash
-reference_name        api_cmd_token        2>/dev/null;         any unescaped bash/sh code
+api_cmd_token      any unescaped bash/sh code
 ```
 
 In the example cmds file: 

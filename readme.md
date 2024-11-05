@@ -17,6 +17,8 @@ where cmds is a file and each line is of the form:
 ```bash
 reference_name        api_cmd_token        2>/dev/null;         any unescaped bash/sh code
 ```
+
+Because in the example cmds file <ip> is the name of the command on he third line
 ```bash
 bash invoke.sh apis/cmds ip
 ```
@@ -24,6 +26,7 @@ is equalivent to:
 ```bash
 bash invoke.sh apis/cmds 3
 ```
+And
 ```bash
 bash invoke.sh apis/cmds hw 
 ```

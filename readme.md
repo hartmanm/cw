@@ -1,6 +1,6 @@
 # cw
 
-# Dynamically Add APIs and New API Commands
+## dynamically add apis and new api commands, run lists of api commands from sets of api files
 
 This guide shows how to dynamically add APIs and new API commands and use them with the `invoke.sh` script.
 

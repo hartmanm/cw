@@ -13,3 +13,8 @@ echo "# ${LAST}" > run/last_cmd
 echo ${EXEC} >> run/last_cmd
 [[ -e run/last_cmd ]] && cat run/last_cmd >> run/history
 bash run/last_cmd
+echo "
+       Copyright (c) 2019 Michael Neill Hartman. All rights reserved.
+       mnh_license@proton.me
+       https://github.com/hartmanm
+"

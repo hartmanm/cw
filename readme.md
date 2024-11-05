@@ -12,19 +12,23 @@ You can invoke API commands using the `invoke.sh` script with different argument
 bash invoke.sh apis/cmds <command>
 ```
 
-where cmds is a file and each line if of the form:
-
-reference_name        api_cmd_token      2>/dev/null;   any unescaped bash/sh code
+where cmds is a file and each line is of the form:
 
 ```bash
-
+reference_name        api_cmd_token        2>/dev/null;         any unescaped bash/sh code
+```
+```bash
 bash invoke.sh apis/cmds ip
-
-is equalivent to: bash invoke.sh apis/cmds 3
-
-
+```
+is equalivent to:
+```bash
+bash invoke.sh apis/cmds 3
+```
+```bash
 bash invoke.sh apis/cmds hw 
-
-is equalivent to: bash invoke.sh apis/cmds 7
+```
+is equalivent to:
+```bash
+bash invoke.sh apis/cmds 7
 ```
 

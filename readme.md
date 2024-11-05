@@ -25,7 +25,7 @@ bash ra.sh
 
 to run all the cmds in subset of the api files you can run the ra.sh wrapper with each api file as a parameter:
 ```bash 
-bash ra.sh cmds cmds2
+bash ra.sh cmds
 ```
 or 
 ```bash 

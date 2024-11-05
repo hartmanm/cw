@@ -18,6 +18,20 @@ where cmds is a file and each line is of the form:
 api_cmd_token      any unescaped bash/sh code
 ```
 
+to run all the cmds in all of the api files you can run the ra.sh wrapper:
+```bash 
+bash ra.sh 
+``` 
+
+to run all the cmds in subset of the api files you can run the ra.sh wrapper with each api file as a parameter:
+```bash 
+bash ra.sh cmds cmds2
+```
+or 
+```bash 
+bash ra.sh cmds cmds2
+```
+
 In the example cmds file: 
 ```bash 
 ip

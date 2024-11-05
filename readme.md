@@ -22,13 +22,13 @@ In the example cmds file:
 ```bash 
 ip
 ``` 
-is the name of the command on the third line. So
+is the name of the command on the seventh line. So
 ```bash
 bash invoke.sh apis/cmds ip
 ```
 is equalivent to:
 ```bash
-bash invoke.sh apis/cmds 3
+bash invoke.sh apis/cmds 7
 ```
 And
 ```bash
@@ -36,6 +36,6 @@ bash invoke.sh apis/cmds hw
 ```
 is equalivent to:
 ```bash
-bash invoke.sh apis/cmds 7
+bash invoke.sh apis/cmds 11
 ```
 
